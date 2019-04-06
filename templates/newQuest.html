@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>GeoQuest - QuestBrydge</title>
+  <title>New Quest</title>
 
   <!-- Custom fonts for this template-->
   <link href="static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -26,7 +26,7 @@
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="index.html">Start Bootstrap</a>
+    <a class="navbar-brand mr-1" href="/">GeoQuest</a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
@@ -121,6 +121,16 @@
           <i class="fas fa-fw fa-table"></i>
           <span>Tables</span></a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/newQuest">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Create A New Quest</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/locations">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Locations</span></a>
+      </li>
     </ul>
 
     <div id="content-wrapper">
@@ -132,15 +142,41 @@
           <li class="breadcrumb-item">
             <a href="index.html">Dashboard</a>
           </li>
-          <li class="breadcrumb-item active">Blank Page</li>
+          <li class="breadcrumb-item active">New Quest</li>
         </ol>
 
         <!-- Page Content -->
-        <h1>Nature Lover's Trail</h1>
+        <h1>Create A New Quest</h1>
         <hr>
-        <p>This is a great starting point for those who are into the NYC's nature and animal views. From the beautiful Central Park to the
-        cool waters of the Hudson Rivers, this quest allows users to traverse the NYC landscape and experience NYC's biotic and abiotic factors.</p>
+        <form action="/questauth">
+            <div class="form-group">
+                <label for="title">Quest name</label>
+                <input type="text"  class="form-control" name="title" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="time">Time To Complete Quest (In Minutes)</label>
+                <textarea type="text" rows="1" class="form-control" name="time" placeholder="Minutes to Complete Quest"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="locations">Select list (select one):</label>
+                <select class="form-control" id="sel1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
 
+                <label for="instructions"></label>
+                <textarea type="text" rows="5" class="form-control" name="instructions" placeholder=""></textarea>
+            </div>
+            <div class="form-group">
+                <label for="link">Image Link</label>
+                <input type="text"  class="form-control" name="link" placeholder="Image Link">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a href="/" type="submit" class="btn btn-secondary">back </a>
+        </form>
+    </div>
       </div>
       <!-- /.container-fluid -->
 

@@ -1,6 +1,8 @@
-from flask import session, Flask, render_template, request, redirect, url_for
-from util import db
-import json
+from flask import Flask, render_template, request,session,url_for,redirect,flash
+
+from util import db, mongo
+import os, csv, time, sqlite3, json
+from urllib.request import Request, urlopen
 
 import os
 app = Flask(__name__)
@@ -25,15 +27,24 @@ def forgot():
 
 @app.route("/charts")
 def charts():
-    render_template("charts.html")
+    return render_template("charts.html")
 
-@app.route("/charts")
+@app.route("/tables")
 def tables():
-    render_template("tables.html")
+    return render_template("tables.html")
+
+@app.route("/newQuest")
+def newQuest():
+    return render_template("newQuest.html")
 
 
+@app.route("/blank")
+def blank   ():
+    return render_template("blank.html")
 
-
+@app.route("/viewQuests")
+def viewQuests():
+    return render_template("viewQuests.html")
 
 
 

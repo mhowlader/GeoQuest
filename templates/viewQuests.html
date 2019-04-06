@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>GeoQuest - QuestBrydge</title>
+  <title>View Quests</title>
 
   <!-- Custom fonts for this template-->
   <link href="static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -26,7 +26,7 @@
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="index.html">Start Bootstrap</a>
+    <a class="navbar-brand mr-1" href="index.html">GeoQuest</a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
@@ -136,12 +136,24 @@
         </ol>
 
         <!-- Page Content -->
-        <h1>Nature Lover's Trail</h1>
-        <hr>
-        <p>This is a great starting point for those who are into the NYC's nature and animal views. From the beautiful Central Park to the
-        cool waters of the Hudson Rivers, this quest allows users to traverse the NYC landscape and experience NYC's biotic and abiotic factors.</p>
-
-      </div>
+        <h1>Choose A Quest</h1>
+        {% for quest in quests %}
+        <div class="col-sm-12" style="padding-top: 10px;">
+            <div class="card" style="width: 24rem;">
+                <!-- <img class="card-img-top" size="100%" style="width:100%;object-fit:cover;height:15vw" src={{recipes[recipe][2]}}> -->
+                <div class="card-body">
+                    <h5 class="card-title">{{quest}}</h5>
+                    <!-- <p class="card-text">
+                        By: {{recipes[recipe][0]}}
+                    </p> -->
+                    <form action="viewOneQuest">
+                        <button class="btn btn-primary" type="submit" name="recipe-id" value="">Read more</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
       <!-- /.container-fluid -->
 
       <!-- Sticky Footer -->
