@@ -5,6 +5,10 @@ import sqlite3
 
 DB_FILE="discobandit.db" # db used for this project. delete file if you want to remove all data/login info.
 
+SERVER_ADDR="68.183.120.187"
+client=MongoClient(SERVER_ADDR,27017)
+
+
 def create_tables():
     db = sqlite3.connect(DB_FILE) # Open if file exists, otherwise create
     c = db.cursor()
